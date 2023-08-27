@@ -119,47 +119,7 @@
     
 })(jQuery);
 
-//Cart
- // Variable to store cart items
-let cartItems = [];
 
-// Function to add an item to the cart
-function addToCart(itemName, itemPrice) {
-  cartItems.push({ name: itemName, price: itemPrice });
-  updateCart();
-}
-
-// Function to update the cart details and calculate total price
-function updateCart() {
-  let cartTotal = 0;
-  let cartItemsHtml = '';
-  for (let item of cartItems) {
-    cartItemsHtml += `<div>${item.name} - $${item.price}</div>`;
-    cartTotal += item.price;
-  }
-  document.getElementById('cartItems').innerHTML = cartItemsHtml;
-  document.getElementById('cartTotal').innerHTML = `Total: $${cartTotal}`;
-}
-
-// Event listener for form submission (checkout)
-document.getElementById('checkoutForm').addEventListener('submit', function (event) {
-  event.preventDefault();
-  // Handle checkout form data, send data to the server, and show order confirmation if needed.
-  // Here, I am just closing the checkout modal and showing an alert for demonstration purposes.
-  $('#checkoutModal').modal('hide');
-  alert('Order placed successfully! Thank you for your purchase.');
-});
-
-// Event listener for "Add to Cart" buttons on products
-document.querySelectorAll('.add-to-cart').forEach((button) => {
-  button.addEventListener('click', function () {
-    const itemName = button.getAttribute('data-item-name');
-    const itemPrice = parseFloat(button.getAttribute('data-item-price'));
-    addToCart(itemName, itemPrice);
-    // Show cart modal when an item is added to the cart
-    $('#cartModal').modal('show');
-  });
-});
 
 //Event Make Appointment - Enable form validation
 document.addEventListener("DOMContentLoaded", function () {
