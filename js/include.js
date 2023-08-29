@@ -14,6 +14,8 @@ async function includeHTML() {
       
       const content = await response.text();
       element.innerHTML = content;
+      var carts = JSON.parse(window.localStorage.getItem('CARTS') ?? '[]');
+      $('#cartItemCount').text(carts.length.toString());
       element.removeAttribute('headerContent');
       element.removeAttribute('footerContent');
     } catch (error) {
