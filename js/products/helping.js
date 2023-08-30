@@ -1,10 +1,10 @@
 var products = [
-    { name: 'Electronic Pulse Stimulator', price: 34, oldPrice: 45, fileName: 'Electronic Pulse Stimulator.jpg', container: 'helping' },
-    { name: 'Neck Massager', price: 48, oldPrice: 52, fileName: 'Neck Massager.webp', container: 'helping' },
-    { name: 'Foot Massager', price: 149, oldPrice: 170, fileName: 'Foot Massager.jpg', container: 'helping' },
-    { name: 'Handle Massager', price: 69, oldPrice: 99, fileName: 'Handle Massager.webp', container: 'helping'},
-    { name: 'Sphygmomanometer', price: 79, oldPrice: 99, fileName: 'Sphygmomanometer.webp', container: 'helping'},
-    { name: 'Thermometer', price: 21, oldPrice: 29, fileName: 'Thermometer.webp', container: 'helping'}
+    { name: 'Electronic Pulse Stimulator', price: 34, oldPrice: 45, container: 'helping' },
+    { name: 'Neck Massager', price: 48, oldPrice: 52,  container: 'helping' },
+    { name: 'Foot Massager', price: 149, oldPrice: 170, container: 'helping' },
+    { name: 'Handle Massager', price: 69, oldPrice: 99, container: 'helping'},
+    { name: 'Sphygmomanometer', price: 79, oldPrice: 99,  container: 'helping'},
+    { name: 'Thermometer', price: 21, oldPrice: 29, container: 'helping'}
 ]
 
 const keyCarts = 'CARTS';
@@ -18,7 +18,7 @@ for (var i = 0; i < products.length; i++) {
                                 Sale
                             </div>
                 <!-- Product image-->
-                <img class="card-img-top" id= "${products[i].name}" src="./img/products/helping/${products[i].fileName}" alt="..." />
+                <img class="card-img-top" id= "${products[i].name}" src="./img/products/helping/${products[i].name}.jpg" alt="..." />
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
