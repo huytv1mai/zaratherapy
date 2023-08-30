@@ -1,10 +1,10 @@
 var products = [
-    { name: 'Electronic Pulse Stimulator', price: 34, oldPrice: 45, fileName: 'Electronic Pulse Stimulator.jpg' },
-    { name: 'Neck Massager', price: 48, oldPrice: 52, fileName: 'Neck Massager.webp' },
-    { name: 'Foot Massager', price: 149, oldPrice: 170, fileName: 'Foot Massager.jpg' },
-    { name: 'Handle Massager', price: 69, oldPrice: 99, fileName: 'Handle Massager.webp' },
-    { name: 'Sphygmomanometer', price: 79, oldPrice: 99, fileName: 'Sphygmomanometer.webp' },
-    { name: 'Thermometer', price: 21, oldPrice: 29, fileName: 'Thermometer.webp' }
+    { name: 'Electronic Pulse Stimulator', price: 34, oldPrice: 45, fileName: 'Electronic Pulse Stimulator.jpg', container: 'helping' },
+    { name: 'Neck Massager', price: 48, oldPrice: 52, fileName: 'Neck Massager.webp', container: 'helping' },
+    { name: 'Foot Massager', price: 149, oldPrice: 170, fileName: 'Foot Massager.jpg', container: 'helping' },
+    { name: 'Handle Massager', price: 69, oldPrice: 99, fileName: 'Handle Massager.webp', container: 'helping'},
+    { name: 'Sphygmomanometer', price: 79, oldPrice: 99, fileName: 'Sphygmomanometer.webp', container: 'helping'},
+    { name: 'Thermometer', price: 21, oldPrice: 29, fileName: 'Thermometer.webp', container: 'helping'}
 ]
 
 const keyCarts = 'CARTS';
@@ -26,7 +26,7 @@ for (var i = 0; i < products.length; i++) {
                         <h5 id="production_name_${i}" class="fw-bolder">${products[i].name}</h5>
                         <!-- Product price-->
                          ${products[i].oldPrice
-            ? `<span class="old-price">$${products[i].oldPrice}</span> `
+            ? `<span class="old-price text-muted text-decoration-line-through">$${products[i].oldPrice}</span> `
             : ''}   
                           $<span id="production_price_${i}">${products[i].price} </span>
                     </div>

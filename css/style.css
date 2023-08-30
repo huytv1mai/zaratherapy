@@ -409,4 +409,111 @@ h6,
   #checkoutForm button:hover {
     background-color: #45a049;
   } */
-  
+  .mb-4-1 {
+    margin-bottom: 1.0rem !important;
+    margin-left: 1.5rem !important;
+}
+.col-p {
+    flex: 0 0 auto;
+    width: 35%;
+}
+.col-p1 {
+    flex: 0 0 auto;
+    width: 65%;
+}
+.pb-1 {
+    padding-bottom: 0.25rem!important;
+}
+.product-description {
+    flex: 1 1;
+    padding: 0!important;
+    font-size: 1rem;
+}
+.mb-2, .py2 {
+    margin-bottom: 0.5rem!important;
+}
+.subscription-card-description {
+    text-align: justify;
+    padding: 0!important;
+    font-size: 18px;
+    font-family: GTWalsheimPro-Light;
+    color: #3a3a3a;
+}
+.py-2,.pb-2 {
+    padding-top: 0.5rem!important;
+    padding-left: 0.5rem !important;
+}
+.row1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.option-title {
+    font-size: 16px;
+    line-height: 1.33;
+    text-align: left;
+    color: #3a3a3a;
+    margin-right: 13px;
+}
+.option-title {
+    font-family: GTWalsheimPro-Medium;
+}
+.text-uppercase {
+    text-transform: uppercase!important;
+}
+/* [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+} */
+.b-1 {
+    border-radius: 4px!important;
+    padding-left: 0.5rem!important;
+    padding-right: 0.5rem!important;
+    padding-bottom: 0.25rem!important;
+    padding-top: 0.25rem!important;
+    margin-bottom: 0.5rem!important;
+    margin-right: 0.25rem!important;
+}
+.btn-outline-dark {
+    color: #292929;
+    border-color: #292929;
+}
+.option-selected {
+    font-family: GTWalsheimPro-Medium!important;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #fff!important;
+    text-decoration: none;
+    padding: 12px 48px;
+    display: inline-block;
+    transition: .4s ease-in-out;
+    text-align: center;
+    background-color: #101820!important;
+    border-radius: 4px;
+    border-color: #101820!important;
+    text-transform: none;
+}
+.option-value {
+    font-family: GTWalsheimPro-Light;
+    font-size: 14px!important;
+    line-height: 1!important;
+    text-align: left;
+    color: #3a3a3a!important;
+    background-color: #fff!important;
+}
+.mt-auto1 {
+    margin-top: auto !important;
+    margin-left: 20px !important;
+}
+.mt-1 {
+    margin-top: 2.0rem !important;
+}
+
+.old-price{
+    text-decoration: line-through;
+    color: red;
+}
+.px-md-4 {
+    padding-right: 8rem !important;
+    padding-left: 3rem !important;
+}
