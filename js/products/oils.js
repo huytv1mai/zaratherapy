@@ -1,10 +1,10 @@
 var products = [
-    { name: 'Balance Ball', price: 14, oldPrice: 20 },
-    { name: 'Mini Exercise Bike', price: 55, oldPrice: 60 },
-    { name: 'Muscle Stimulator', price: 50, oldPrice: 69 },
-    { name: 'Dumbbell', price: 9, oldPrice: 12 },
-    { name: 'Wheel Chair', price: 125, oldPrice: 149 },
-    { name: 'Yoga Mat', price: 10, oldPrice: 16 },
+    { name: 'Basil Essential', price: 25, oldPrice: 30 },
+    { name: 'Frankincense Essential', price: 28, oldPrice: 32 },
+    { name: 'Lavender Essential', price: 28, oldPrice: 32 },
+    { name: 'Lime Essential', price: 32, oldPrice: 28 },
+    { name: 'Black Pepper Essential', price: 25, oldPrice: 18 },
+    { name: 'Cinnamon Bark', price: 30, oldPrice: 35 }
 ]
 
 const keyCarts = 'CARTS';
@@ -12,13 +12,13 @@ const keyCarts = 'CARTS';
 for (var i = 0; i < products.length; i++) {
     var htmlElement = `<div class="col mb-5 service-item-prd">
         <div class="card h-100">
-            <a href="AccessoriesDetail.html" onClick="directToDetailPage(event)">
+            <a href="oilsDetail.html" onClick="directToDetailPage(event)">
             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
                                 Sale
                             </div>
                 <!-- Product image-->
-                <img class="card-img-top" id= "${products[i].name}" src="./img/products/Acces/${products[i].name}.jpg" alt="..." />
+                <img class="card-img-top" id= "${products[i].name}" src="./img/products/oils/${products[i].name}.jpg" alt="..." />
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
@@ -47,6 +47,7 @@ for (var i = 0; i < products.length; i++) {
 }
 
 var carts = JSON.parse(window.localStorage.getItem(keyCarts) ?? '[]');
+$('#cartItemCount').text(carts.length.toString());
 
 function addItemToCart(event) {
     let id = event.currentTarget.id;
@@ -61,7 +62,7 @@ function addItemToCart(event) {
     }
     else { // add lan dau
         let product = products.find(x => x.name === productionName);
-        carts.push({ name: productionName, container: 'lotion', oldPrice: product.oldPrice, price: parseInt(productionPrice), count: 1 });
+        carts.push({ name: productionName, container: 'oils', oldPrice: product.oldPrice, price: parseInt(productionPrice), count: 1 });
     };
     saveCarts(carts);
     $('#cartItemCount').text(carts.length.toString());

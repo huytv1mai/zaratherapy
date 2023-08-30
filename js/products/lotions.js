@@ -1,10 +1,10 @@
 var products = [
-    { name: 'Cetaphil', container: 'lotion', price: 15, oldPrice: 20 },
-    { name: 'Aveeno', container: 'lotion', price: 18, oldPrice: 21 },
-    { name: 'Eucerin', container: 'lotion',price: 28, oldPrice: 32 },
-    { name: 'Kiehls', container: 'lotion', price: 25, oldPrice: 32 },
-    { name: 'Lubriderm', container: 'lotion', price: 25, oldPrice: 29 },
-    { name: 'Obagi-C RX', container: 'lotion', price: 21, oldPrice: 25 },
+    { name: 'Cetaphil', price: 15, oldPrice: 20 },
+    { name: 'Aveeno', price: 18, oldPrice: 21 },
+    { name: 'Eucerin', price: 28, oldPrice: 32 },
+    { name: 'Jergens', price: 11, oldPrice: 15 },
+    { name: 'Lubriderm', price: 25, oldPrice: 29 },
+    { name: 'Curel', price: 10, oldPrice: 16 },
 ]
 
 const keyCarts = 'CARTS';
@@ -12,13 +12,13 @@ const keyCarts = 'CARTS';
 for (var i = 0; i < products.length; i++) {
     var htmlElement = `<div class="col mb-5 service-item-prd">
         <div class="card h-100">
-            <a href="l-${products[i].name}.html">
+            <a href="lotionDetail.html" onClick="directToDetailPage(event)">
             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
                                 Sale
                             </div>
                 <!-- Product image-->
-                <img class="card-img-top" src="./img/products/lotion/${products[i].name}.jpg" alt="..." />
+                <img class="card-img-top" id= "${products[i].name}" src="./img/products/lotion/${products[i].name}.jpg" alt="..." />
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
@@ -61,12 +61,19 @@ function addItemToCart(event) {
         product.count++;
     }
     else { // add lan dau
-        let product = products.find(x=>x.name === productionName);
-        carts.push({ name: productionName, container: 'lotion', oldPrice:product.oldPrice, price: parseInt(productionPrice), count: 1 });
+        let product = products.find(x => x.name === productionName);
+        carts.push({ name: productionName, container: 'lotion', oldPrice: product.oldPrice, price: parseInt(productionPrice), count: 1 });
     };
     saveCarts(carts);
     $('#cartItemCount').text(carts.length.toString());
 }
+
 function saveCarts(carts) {
     window.localStorage.setItem(keyCarts, JSON.stringify(carts));
+}
+
+function directToDetailPage(event) {
+    console.log(event)
+    let id = event.target.id
+    localStorage.setItem("directTo", id)
 }

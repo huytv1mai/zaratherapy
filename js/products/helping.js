@@ -1,10 +1,10 @@
 var products = [
-    { name: 'Electronic Pulse Stimulator', price: 34, oldPrice: 45 },
-    { name: 'Neck Massager', price: 48, oldPrice: 52 },
-    { name: 'Foot Massager', price: 149, oldPrice: 170 },
-    { name: 'Handle Massager', price: 69, oldPrice: 99 },
-    { name: 'Sphygmomanometer', price: 79, oldPrice: 99 },
-    { name: 'Thermomerter', price: 21, oldPrice: 29 },
+    { name: 'Electronic Pulse Stimulator', price: 34, oldPrice: 45, fileName: 'Electronic Pulse Stimulator.jpg' },
+    { name: 'Neck Massager', price: 48, oldPrice: 52, fileName: 'Neck Massager.webp' },
+    { name: 'Foot Massager', price: 149, oldPrice: 170, fileName: 'Foot Massager.jpg' },
+    { name: 'Handle Massager', price: 69, oldPrice: 99, fileName: 'Handle Massager.webp' },
+    { name: 'Sphygmomanometer', price: 79, oldPrice: 99, fileName: 'Sphygmomanometer.webp' },
+    { name: 'Thermometer', price: 21, oldPrice: 29, fileName: 'Thermometer.webp' }
 ]
 
 const keyCarts = 'CARTS';
@@ -12,13 +12,13 @@ const keyCarts = 'CARTS';
 for (var i = 0; i < products.length; i++) {
     var htmlElement = `<div class="col mb-5 service-item-prd">
         <div class="card h-100">
-            <a href="l-${products[i].name}.html">
+            <a href="helpingDetail.html" onClick="directToDetailPage(event)">
             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
                                 Sale
                             </div>
                 <!-- Product image-->
-                <img class="card-img-top" src="./img/products/lotion/${products[i].name}.jpg" alt="..." />
+                <img class="card-img-top" id= "${products[i].name}" src="./img/products/helping/${products[i].fileName}" alt="..." />
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
@@ -61,11 +61,19 @@ function addItemToCart(event) {
         product.count++;
     }
     else { // add lan dau
-        carts.push({ name: productionName, price: parseInt(productionPrice), count: 1 });
+        let product = products.find(x => x.name === productionName);
+        carts.push({ name: productionName, container: 'helping', oldPrice: product.oldPrice, price: parseInt(productionPrice), count: 1 });
     };
     saveCarts(carts);
     $('#cartItemCount').text(carts.length.toString());
 }
+
 function saveCarts(carts) {
     window.localStorage.setItem(keyCarts, JSON.stringify(carts));
+}
+
+function directToDetailPage(event) {
+    console.log(event)
+    let id = event.target.id
+    localStorage.setItem("directTo", id)
 }
