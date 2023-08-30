@@ -9,8 +9,7 @@ console.log(products);
 var hrefImg = `<img class="card-img-top" src="./img/products/Acces/${productName}.jpg" alt="..." />`
 $('#imgProduct').append(hrefImg);
 
-
-var productDetail = products.find(x=>x.name === productName);
+var productDetail = products.find(x => x.name === productName);
 $('#name').append(productDetail.name);
 $('#preview').append(productDetail.preview);
 $('#ingredients').append(productDetail.ingredients);
@@ -20,26 +19,24 @@ $('#about').append(productDetail.about);
 $('#description').append(productDetail.description);
 $('#details').append(productDetail.details);
 
-// add to cart//
-// function onclickAddCart() {
-//     let quantity = $('#quantity').val();
-//     if (carts.filter(x => x.name === productionName).length > 0) {
-//         let item = products.find(x => x.name === productionName);
+//add to cart//
+function onclickAddCart() {
+    let quantity = $('#quantity').val();
+    let item = products.find(x => x.name === productName);
+    if (carts.filter(x => x.name === productName).length > 0) {
+        let newArr = carts.filter(x => x.name !== productName);
+        localStorage.setItem("CARTS", JSON.stringify(newArr));
+        carts = newArr;
+        carts.push({ name: productName, container: 'Acces', oldPrice: item.oldPrice, price: item.price, count: quantity });
+    }
+    else {
+        carts.push({ name: productName, container: 'Acces', oldPrice: item.oldPrice, price: item.price, count: quantity });
+    }
+    saveCarts(carts);
+    $('#cartItemCount').text(carts.length.toString());
+}
 
-//         carts.push({ name: productName, container: 'Acces', oldPrice: item.oldPrice, price: item.Price, count: quantity });
-//     }
-    
-//     neu co roi thi thay doi quantity cua no o trong mang carts
-//     neu chua thi push moi 1 item vo mang carts
-
-//     saveCarts(carts);
-//     $('#cartItemCount').text(carts.length.toString());
-// }
-
-// function saveCarts(carts) {
-//     window.localStorage.setItem('CARTS', JSON.stringify(carts));
-// }
-
-
-    
-
+function saveCarts(carts) {
+    window.localStorage.setItem('CARTS', JSON.stringify(carts));
+    location.reload();
+}

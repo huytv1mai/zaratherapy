@@ -7,7 +7,7 @@ var productName = localStorage.getItem('directTo');
 var products = JSON.parse(localStorage.getItem('products'));
 console.log(products);
 var productDetail = products.find(x=>x.name === productName);
-var hrefImg = `<img class="card-img-top" src="./img/products/helping/${productDetail.fileName}" alt="..." />`
+var hrefImg = `<img class="card-img-top" src="./img/products/helping/${productName}.jpg" alt="..." />`
 $('#imgProduct').append(hrefImg);
 
 
@@ -20,20 +20,24 @@ $('#about').append(productDetail.about);
 $('#note').append(productDetail.note);
 $('#details').append(productDetail.details);
 
-// add to cart//
+//add to cart//
 function onclickAddCart() {
     let quantity = $('#quantity').val();
-    let Detail = carts.find(x=>x.name === productName);
-    carts.push({ name: productName, container: 'Acces', oldPrice: Detail.oldPrice, price: Detail.Price, count: quantity });
-
+    let item = products.find(x => x.name === productName);
+    if (carts.filter(x => x.name === productName).length > 0) {
+        let newArr = carts.filter(x => x.name !== productName);
+        localStorage.setItem("CARTS", JSON.stringify(newArr));
+        carts = newArr;
+        carts.push({ name: productName, container: 'helping', oldPrice: item.oldPrice, price: item.price, count: quantity });
+    }
+    else {
+        carts.push({ name: productName, container: 'helping', oldPrice: item.oldPrice, price: item.price, count: quantity });
+    }
     saveCarts(carts);
     $('#cartItemCount').text(carts.length.toString());
 }
 
 function saveCarts(carts) {
     window.localStorage.setItem('CARTS', JSON.stringify(carts));
+    location.reload();
 }
-
-
-    
-
