@@ -21,21 +21,24 @@ $('#description').append(productDetail.description);
 $('#details').append(productDetail.details);
 
 // add to cart//
-function onclickAddCart() {
-    let quantity = $('#quantity').val();
-    let item = carts.find(x=>x.name === productName);
-    carts.push({ name: productName, container: 'Acces', oldPrice: item.oldPrice, price: item.Price, count: quantity });
-    //kiem tra xem trong mang carts ton tai item chua
-    //neu co roi thi thay doi quantity cua no o trong mang carts
-    //neu chua thi push moi 1 item vo mang carts
+// function onclickAddCart() {
+//     let quantity = $('#quantity').val();
+//     if (carts.filter(x => x.name === productionName).length > 0) {
+//         let item = products.find(x => x.name === productionName);
 
-    saveCarts(carts);
-    $('#cartItemCount').text(carts.length.toString());
-}
+//         carts.push({ name: productName, container: 'Acces', oldPrice: item.oldPrice, price: item.Price, count: quantity });
+//     }
+    
+//     neu co roi thi thay doi quantity cua no o trong mang carts
+//     neu chua thi push moi 1 item vo mang carts
 
-function saveCarts(carts) {
-    window.localStorage.setItem('CARTS', JSON.stringify(carts));
-}
+//     saveCarts(carts);
+//     $('#cartItemCount').text(carts.length.toString());
+// }
+
+// function saveCarts(carts) {
+//     window.localStorage.setItem('CARTS', JSON.stringify(carts));
+// }
 
 
     

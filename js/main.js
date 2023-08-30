@@ -801,7 +801,9 @@ and Chamomile & Ylang-Ylang Essential Oils to Calm & Relax, 33 fl. oz </p>`,
     <LI>Date First Available : August 10, 2020</LI>
     <LI>Manufacturer : MegaWise</LI>
     <LI>ASIN : B08FHZ25D1</LI>
-    <LI>Country of Origin : China</LI>`
+    <LI>Country of Origin : China</LI>`,
+        container: `helping`
+
     },
     {
         name: 'Neck Massager', price: 48, oldPrice: 52, fileName: 'Neck Massager.webp',
@@ -827,7 +829,9 @@ and Chamomile & Ylang-Ylang Essential Oils to Calm & Relax, 33 fl. oz </p>`,
     <li>Date First Available : October 13, 2022</li>
     <li>Manufacturer : Homedics</li>
     <li>ASIN : B0BJ49NNSF</li>
-    <li>Country of Origin : China</li>` },
+    <li>Country of Origin : China</li>`,
+    container: `helping`
+},
     {
         name: 'Foot Massager', price: 149, oldPrice: 170, fileName: 'Foot Massager.jpg',
         preview: `HoMedics Air 2.0 Foot Massager with Soothing Heat and Rhythmic Air
@@ -857,6 +861,8 @@ and Chamomile & Ylang-Ylang Essential Oils to Calm & Relax, 33 fl. oz </p>`,
         <li>Domestic Shipping: Currently, item can be shipped only within the U.S. and to APO/FPO addresses.
             For APO/FPO shipments, please check with the manufacturer regarding warranty and support issues.
         </li>`,
+        container: `helping`
+
     },
     {
         name: 'Handle Massager', price: 69, oldPrice: 99, fileName: 'Handle Massager.webp',
@@ -892,6 +898,8 @@ and Chamomile & Ylang-Ylang Essential Oils to Calm & Relax, 33 fl. oz </p>`,
         <li>Part Number : 7</li>
         <li>Style : Modern</li>
         <li>ASIN : B0BQ7BGCF9</li>`,
+        container: `helping`
+
     },
     {
         name: 'Sphygmomanometer', price: 79, oldPrice: 99, fileName: 'Sphygmomanometer.webp',
@@ -910,6 +918,8 @@ and Chamomile & Ylang-Ylang Essential Oils to Calm & Relax, 33 fl. oz </p>`,
         <li>Date First Available  :  November 8, 2016</li>
         <li>Manufacturer  :  Vita</li>
         <li>ASIN  :  B01MRHDIR7 </li>`,
+        container: `helping`
+
     },
     {
         name: 'Thermometer', price: 21, oldPrice: 29, fileName: 'Thermometer.webp',
@@ -930,6 +940,8 @@ and Chamomile & Ylang-Ylang Essential Oils to Calm & Relax, 33 fl. oz </p>`,
         <li>Manufacturer  :  AmazonUs/HOML9</li>
         <li>ASIN  :  B08CLLPWVM</li>
         <li>Country of Origin  :  China</li>`,
+        container: `helping`
+
     }
 ]
 

@@ -1,10 +1,10 @@
 var products = [
-    { name: 'Basil Essential', price: 25, oldPrice: 30 },
-    { name: 'Frankincense Essential', price: 28, oldPrice: 32 },
-    { name: 'Lavender Essential', price: 28, oldPrice: 32 },
-    { name: 'Lime Essential', price: 32, oldPrice: 28 },
-    { name: 'Black Pepper Essential', price: 25, oldPrice: 18 },
-    { name: 'Cinnamon Bark', price: 30, oldPrice: 35 }
+    { name: 'Basil Essential', price: 25, oldPrice: 30, container: 'oils' },
+    { name: 'Frankincense Essential', price: 28, oldPrice: 32, container: 'oils' },
+    { name: 'Lavender Essential', price: 28, oldPrice: 32, container: 'oils' },
+    { name: 'Lime Essential', price: 32, oldPrice: 28, container: 'oils' },
+    { name: 'Black Pepper Essential', price: 25, oldPrice: 18, container: 'oils' },
+    { name: 'Cinnamon Bark', price: 30, oldPrice: 35, container: 'oils' }
 ]
 
 const keyCarts = 'CARTS';
@@ -26,7 +26,7 @@ for (var i = 0; i < products.length; i++) {
                         <h5 id="production_name_${i}" class="fw-bolder">${products[i].name}</h5>
                         <!-- Product price-->
                          ${products[i].oldPrice
-            ? `<span class="old-price">$${products[i].oldPrice}</span> `
+            ? `<span class="old-price text-muted text-decoration-line-through">$${products[i].oldPrice}</span> `
             : ''}   
                           $<span id="production_price_${i}">${products[i].price} </span>
                     </div>

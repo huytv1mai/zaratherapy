@@ -50,6 +50,8 @@ function onChangeCountValue(event, value) {
     let product = products.find(x => x.name === name);
     product.count = parseInt(value)
     localStorage.setItem("CARTS", JSON.stringify(products));
+    location.reload();
+
 
 }
 function onClickTrash(event) {

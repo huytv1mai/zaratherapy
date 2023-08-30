@@ -1,10 +1,10 @@
 var products = [
-    { name: 'Balance Ball', price: 14, oldPrice: 20 },
-    { name: 'Mini Exercise Bike', price: 55, oldPrice: 60 },
-    { name: 'Muscle Stimulator', price: 50, oldPrice: 69 },
-    { name: 'Dumbbell', price: 9, oldPrice: 12 },
-    { name: 'Wheel Chair', price: 125, oldPrice: 149 },
-    { name: 'Yoga Mat', price: 10, oldPrice: 16 },
+    { name: 'Balance Ball', price: 14, oldPrice: 20, container: 'Acces'},
+    { name: 'Mini Exercise Bike', price: 55, oldPrice: 60, container: 'Acces' },
+    { name: 'Muscle Stimulator', price: 50, oldPrice: 69, container: 'Acces' },
+    { name: 'Dumbbell', price: 9, oldPrice: 12, container: 'Acces' },
+    { name: 'Wheel Chair', price: 125, oldPrice: 149, container: 'Acces' },
+    { name: 'Yoga Mat', price: 10, oldPrice: 16, container: 'Acces' },
 ]
 
 const keyCarts = 'CARTS';
@@ -26,7 +26,7 @@ for (var i = 0; i < products.length; i++) {
                         <h5 id="production_name_${i}" class="fw-bolder">${products[i].name}</h5>
                         <!-- Product price-->
                          ${products[i].oldPrice
-            ? `<span class="old-price">$${products[i].oldPrice}</span> `
+            ? `<span class="old-price text-muted text-decoration-line-through">$${products[i].oldPrice}</span> `
             : ''}   
                           $<span id="production_price_${i}">${products[i].price} </span>
                     </div>
@@ -61,7 +61,7 @@ function addItemToCart(event) {
     }
     else { // add lan dau
         let product = products.find(x => x.name === productionName);
-        carts.push({ name: productionName, container: 'lotion', oldPrice: product.oldPrice, price: parseInt(productionPrice), count: 1 });
+        carts.push({ name: productionName, container: 'Acces', oldPrice: product.oldPrice, price: parseInt(productionPrice), count: 1 });
     };
     saveCarts(carts);
     $('#cartItemCount').text(carts.length.toString());
