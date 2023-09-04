@@ -517,3 +517,6 @@ h6,
     padding-right: 8rem !important;
     padding-left: 3rem !important;
 }
+#loginForm .form-group {
+    margin-bottom: 20px;
+}
